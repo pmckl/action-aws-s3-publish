@@ -1,0 +1,13 @@
+# action.yml
+name: 'S3 Publish'
+description: 'Publish file(s) to S3'
+inputs:
+  input-file:  # id of input
+    description: 'File to upload'
+    required: true
+    default: 'temp.txt'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.input-file }}
